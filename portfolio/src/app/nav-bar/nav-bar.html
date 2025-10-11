@@ -1,0 +1,15 @@
+<header class="nav-bar">
+    <img [src]="profileImage" alt="Profile" class="profile-image" />
+    <nav>
+      @for(pageItem of pages; track pageItem) {
+        @if(this.current_page ===  pageItem){
+        <span class = "selected_page"> {{pageItem.name}} </span>
+        }
+        @else{
+        <span class="unselected_pages" (click)="navigateTo(pageItem)">
+          {{pageItem.name}}
+      </span>
+    }
+      }
+    </nav>
+</header>

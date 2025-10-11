@@ -1,0 +1,28 @@
+<div class="skill-list-wrapper">
+  @if(canScrollLeft) {
+    <button class="scroll-btn scroll-left" (click)="scrollToPrev()">
+      &#8249;
+    </button>
+  }
+
+  <div
+    class="skill-list"
+    #skillContainer
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp()"
+    (mouseleave)="onMouseLeave()">
+    @for(skill of skills; track skill.title) {
+      <app-card
+        [imageUrl]="skill.imageUrl"
+        [title]="skill.title"
+        [skillLevel]="skill.skillLevel"/>
+    }
+  </div>
+
+  @if(canScrollRight) {
+    <button class="scroll-btn scroll-right" (click)="scrollRight()">
+      &#8250;
+    </button>
+  }
+</div>

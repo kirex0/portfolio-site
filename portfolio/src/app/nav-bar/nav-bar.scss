@@ -1,0 +1,55 @@
+.nav-bar {
+    display: flex;
+    padding-inline: 16px;
+    padding-block: 16px;
+    background-color: #25252A;
+    color: #64748B;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8B5CF6;
+}
+
+nav {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    > span {
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+}
+.unselected_pages {
+    &:hover {
+        color: #8B5CF6;
+    }
+}
+
+.selected_page {
+    color: #8B5CF6;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 2px;
+        background-color: #8B5CF6;
+    }
+}
+}
