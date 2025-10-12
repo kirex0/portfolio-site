@@ -12,11 +12,12 @@
     (mousemove)="onMouseMove($event)"
     (mouseup)="onMouseUp()"
     (mouseleave)="onMouseLeave()">
-    @for(skill of skills; track skill.title) {
+    @for(skill of skills; track skill.title; let i = $index) {
       <app-card
         [imageUrl]="skill.imageUrl"
         [title]="skill.title"
-        [skillLevel]="skill.skillLevel"/>
+        [skillLevel]="skill.skillLevel"
+        [style.--card-index]="i"/>
     }
   </div>
 

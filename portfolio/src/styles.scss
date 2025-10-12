@@ -6,8 +6,38 @@ body{
     font-style: normal;
     margin: 0;
     padding: 0;
-    background-color: #0A0A0B;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+    background-attachment: fixed;
     color: #F8FAFC;
+    position: relative;
+    overflow-x: hidden;
+}
+
+// Animated background effect
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Ensure content is above background animation
+main {
+    position: relative;
+    z-index: 1;
 }
 // Disable default scrollbar
 *::-webkit-scrollbar {

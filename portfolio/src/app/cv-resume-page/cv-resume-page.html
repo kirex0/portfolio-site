@@ -1,1 +1,43 @@
-<p>cv-resume-page works!</p>
+<div class="cv-resume">
+  <div class="cv-resume__container">
+    <h1 class="cv-resume__title">Resume & CV</h1>
+
+    <div class="cv-resume__content">
+      <!-- Resume Section -->
+      <div class="document-section">
+        <div class="document-header">
+          <h2>Resume</h2>
+          <button class="download-btn" (click)="downloadResume()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </button>
+        </div>
+        <div class="document-viewer">
+          <embed [src]="resumePath" type="application/pdf" class="pdf-embed">
+        </div>
+      </div>
+
+      <!-- CV Section -->
+      <div class="document-section">
+        <div class="document-header">
+          <h2>CV</h2>
+          <button class="download-btn" (click)="downloadCv()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </button>
+        </div>
+        <div class="document-viewer">
+          <embed [src]="cvPath" type="application/pdf" class="pdf-embed">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

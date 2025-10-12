@@ -24,10 +24,10 @@ export class Card implements AfterViewInit {
       const cardElement = this.elementRef.nativeElement.querySelector('[data-tilt]');
       if (cardElement) {
         VanillaTilt.init(cardElement, {
-          max: 25,
-          speed: 400,
+          max: 20,
+          speed: 200,
           glare: true,
-          'max-glare': 0.1,
+          'max-glare': 0.3,
         });
       }
     }

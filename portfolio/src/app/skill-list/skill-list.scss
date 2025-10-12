@@ -1,6 +1,7 @@
 .skill-list-wrapper {
   position: relative;
-  width: 100%;
+  width: 66%;
+  margin: 0 auto;
 }
 
 .skill-list {
@@ -10,7 +11,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: grab;
   user-select: none;
 

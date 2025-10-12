@@ -1,0 +1,233 @@
+.connect {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #2a1a3e 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  overflow: hidden;
+
+  &__container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  &__subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  transition: all 0.3s ease;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  // Shine effect on hover
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__label {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s ease;
+  }
+
+  // Hover effects
+  &:hover {
+    transform: translateX(10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+
+    .contact-link__icon svg {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  // Email specific
+  &--email {
+    &:hover {
+      .contact-link__label {
+        color: #a78bfa;
+      }
+      
+      .contact-link__icon {
+        color: #a78bfa;
+      }
+    }
+  }
+
+  // LinkedIn specific
+  &--linkedin {
+    &:hover {
+      .contact-link__label {
+        color: #0077b5;
+      }
+      
+      .contact-link__icon {
+        color: #0077b5;
+      }
+    }
+  }
+
+  // GitHub specific
+  &--github {
+    &:hover {
+      .contact-link__label {
+        color: #6e5494;
+      }
+
+      .contact-link__icon {
+        color: #6e5494;
+      }
+    }
+  }
+
+  // Animation on load
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation: fadeInSlide 0.6s ease-out #{$i * 0.15}s both;
+    }
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .connect {
+    padding: 3rem 1.5rem;
+
+    &__links {
+      gap: 1.25rem;
+    }
+  }
+
+  .contact-link {
+    &__icon {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .connect {
+    padding: 2rem 1rem;
+
+    &__links {
+      gap: 1rem;
+    }
+  }
+
+  .contact-link {
+    gap: 1rem;
+    font-size: 0.95rem;
+
+    &__icon {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

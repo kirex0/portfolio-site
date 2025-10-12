@@ -29,47 +29,52 @@ export class SkillList implements AfterViewInit {
     {
       imageUrl: '/skill_icons/MongoDB.png',
       title: 'MongoDB',
-      skillLevel: 'expert'
+      skillLevel: 'advanced'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: 'https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg',
       title: 'Python',
       skillLevel: 'expert'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: 'https://nodejs.org/static/logos/jsIconGreen.svg',
       title: 'Node.js',
-      skillLevel: 'intermediate'
+      skillLevel: 'expert'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: 'https://storage.googleapis.com/cms-storage-bucket/icon_flutter.4fd5520fe28ebf839174.svg',
       title: 'Flutter',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: '/skill_icons/JavaScript-logo.png',
       title: 'JavaScript',
       skillLevel: 'advanced'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: '/skill_icons/docker-mark-blue.png',
       title: 'Docker',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: '/skill_icons/aws-color.png',
       title: 'AWS',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: '/skill_icons/langgraph-color.png',
       title: 'LangGraph',
+      skillLevel: 'advanced'
+    },
+    {
+      imageUrl: '/skill_icons/Figma-Icon.png',
+      title: 'Figma',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
-      title: 'Express.js',
-      skillLevel: 'intermediate'
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/768px-UbuntuCoF.svg.png?20120210072525',
+      title: 'Ubuntu',
+      skillLevel: 'advanced'
     }
   ];
 
