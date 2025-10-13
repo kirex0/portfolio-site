@@ -21,14 +21,30 @@ export class Card implements AfterViewInit {
   ngAfterViewInit() {
     // Only initialize VanillaTilt in the browser, not during SSR
     if (isPlatformBrowser(this.platformId)) {
-      const cardElement = this.elementRef.nativeElement.querySelector('[data-tilt]');
+      const cardElement = this.elementRef.nativeElement.querySelector('[data-tilt]') as HTMLElement;
       if (cardElement) {
-        VanillaTilt.init(cardElement, {
-          max: 20,
-          speed: 200,
-          glare: true,
-          'max-glare': 0.3,
-        });
+        // Get the card index from the host element (app-card)
+        const hostElement = this.elementRef.nativeElement as HTMLElement;
+        const cardIndex = parseInt(getComputedStyle(hostElement).getPropertyValue('--card-index') || '0', 10);
+        const delay = cardIndex * 150 + 800; // 0.15s * index + 0.8s initial delay
+
+        // Trigger fade-in animation
+        setTimeout(() => {
+          cardElement.classList.add('visible');
+        }, delay);
+
+        // Initialize VanillaTilt after the fade-in completes
+        setTimeout(() => {
+          VanillaTilt.init(cardElement, {
+            max: 20,
+            speed: 200,
+            glare: true,
+            'max-glare': 0.3,
+          });
+
+          // Ensure transform-style: preserve-3d is maintained for child translateZ to work
+          cardElement.style.transformStyle = 'preserve-3d';
+        }, delay + 600); // delay + transition duration
       }
     }
   }
