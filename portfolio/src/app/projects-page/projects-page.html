@@ -1,1 +1,40 @@
-<p>projects-page works!</p>
+<div class="projects-page" #projectsContainer>
+  <div class="projects-container">
+    <h1 class="page-title">My Projects / Experience</h1>
+
+    <div class="projects-grid">
+      @for(project of visibleProjects; track project.name; let i = $index) {
+        <app-project-card
+          [name]="project.name"
+          [subtitle]="project.subtitle"
+          [imageUrl]="project.imageUrl"
+          [technologies]="project.technologies"
+          [deployedUrl]="project.deployedUrl"
+          [repoUrl]="project.repoUrl"
+          [style.--card-index]="i"/>
+      }
+    </div>
+
+    <div class="navigation-arrows">
+      @if(currentPageSignal() > 0) {
+        <div class="scroll-up-arrow" (click)="scrollToPrevSet()">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      }
+
+      @if(canScrollDown) {
+        <div class="scroll-down-arrow" (click)="scrollToNextSet()">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      }
+    </div>
+
+    <div class="page-indicator">
+      Page {{ currentPageSignal() + 1 }} of {{ totalPages }}
+    </div>
+  </div>
+</div>
