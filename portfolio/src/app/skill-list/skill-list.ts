@@ -22,12 +22,12 @@ export class SkillList implements AfterViewInit {
 
   skills: Skill[] = [
     {
-      imageUrl: '/skill_icons/angular_gradient.png',
+      imageUrl: '/assets/skill_icons/angular_gradient.png',
       title: 'Angular',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/MongoDB.png',
+      imageUrl: '/assets/skill_icons/MongoDB.png',
       title: 'MongoDB',
       skillLevel: 'advanced'
     },
@@ -47,27 +47,27 @@ export class SkillList implements AfterViewInit {
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/JavaScript-logo.png',
+      imageUrl: '/assets/skill_icons/JavaScript-logo.png',
       title: 'JavaScript',
       skillLevel: 'advanced'
     },
     {
-      imageUrl: '/skill_icons/docker-mark-blue.png',
+      imageUrl: '/assets/skill_icons/docker-mark-blue.png',
       title: 'Docker',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/aws-color.png',
+      imageUrl: '/assets/skill_icons/aws-color.png',
       title: 'AWS',
       skillLevel: 'intermediate'
     },
     {
-      imageUrl: '/skill_icons/langgraph-color.png',
+      imageUrl: '/assets/skill_icons/langgraph-color.png',
       title: 'LangGraph',
       skillLevel: 'advanced'
     },
     {
-      imageUrl: '/skill_icons/Figma-Icon.png',
+      imageUrl: '/assets/skill_icons/Figma-Icon.png',
       title: 'Figma',
       skillLevel: 'intermediate'
     },

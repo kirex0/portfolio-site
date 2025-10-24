@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild, AfterViewInit, signal, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ProjectCard } from '../project-card/project-card';
 import { Project } from '../interfaces/project';
 
@@ -14,6 +14,8 @@ export class ProjectsPage implements AfterViewInit {
 
   currentPageSignal = signal(0);
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   get currentPage(): number {
     return this.currentPageSignal();
   }
@@ -27,21 +29,21 @@ export class ProjectsPage implements AfterViewInit {
     {
       name: 'Portfolio Website',
       subtitle: 'Personal Project',
-      imageUrl: '/project_images/portfolio.png',
+      imageUrl: 'assets/project_images/website.png',
       technologies: ['Angular', 'TypeScript', 'SCSS', 'HTML', 'AWS', 'Docker'],
       repoUrl: "https://github.com/kirex0/portfolio-site/blob/main/portfolio/README.md"
     },
     {
       name: 'Spiderbyte',
       subtitle: 'Capstone Project',
-      imageUrl: '/project_images/portfolio.png',
+      imageUrl: 'assets/project_images/SpiderByteLogo.png',
       technologies: ['python', 'MongoDB', 'Node.js', 'RabbitMQ', 'Gemini-API', 'React', 'RESTful APIs', 'Websockets', 'Docker'],
       repoUrl: "https://github.com/kirex0/spiderbyte-server"
     },
     {
       name: "Roadrunner Connect",
       subtitle: "Internship",
-      imageUrl: "",
+      imageUrl: "assets/project_images/RoadrunnerConnectLogo.png",
       technologies: ['MongoDB', 'Flutter/Dart', 'Node.js', 'python', 'AWS S3', 'RESTful APIs', 'Docker'],
       deployedUrl: "https://roadrunnerconnect.co/"
     }
@@ -80,7 +82,7 @@ export class ProjectsPage implements AfterViewInit {
 
   private updateArrowVisibility() {
     // Scroll to top of the page smoothly
-    if (this.projectsContainer) {
+    if (isPlatformBrowser(this.platformId) && this.projectsContainer?.nativeElement) {
       this.projectsContainer.nativeElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start'

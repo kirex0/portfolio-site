@@ -12,8 +12,8 @@ export class CvResumePage {
   resumePath: SafeResourceUrl;
   cvPath: SafeResourceUrl;
 
-  private resumePathRaw = '/assets/resume.pdf';
-  private cvPathRaw = '/resume_and_cv/Kade-Shockey-cv.pdf';
+  private resumePathRaw = '/assets/resume_and_cv/resume.pdf';
+  private cvPathRaw = '/assets/resume_and_cv/cv.pdf';
 
   constructor(private sanitizer: DomSanitizer) {
     this.resumePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumePathRaw);
