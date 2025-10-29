@@ -55,9 +55,10 @@ export class ProjectsPage implements AfterViewInit {
     {
       name: "Lucent",
       subtitle: "Hackathon-Project",
-      description: 'Lucent is a Campuse wellness app developed during the CU-MSU-DU Hackathon, taking first place in the hackathon. This application created a way for anyone on campus to easily access wellness resources, view counselors on the listed campuses, interact with a chatbot based on peer reviewed research, and engaged the user with streaks enabling users to check into their wellness.',
+      description: 'Lucent is a Campuse wellness app developed during the CU-MSU-DU Hackathon, taking first place in the hackathon. This application created a way for anyone on campus to easily access wellness resources, view counselors on the listed campuses, interact with a chatbot based on peer reviewed research, and engaged the user with streaks enabling users to check into their wellness. This was developed in 24 hours, featuring a LOT of caffeine. This may not be the prettiest code, but it was a great experience and a ton of fun!',
       imageUrl: "assets/project_images/Lucent.png",
       technologies: ['Supabase', 'Flutter/Dart', 'python', 'Fast API', 'OpenAI-API', 'Docker'],
+      repoUrl: "https://github.com/orgs/Bit-Happens-Hackathon/repositories"
     }
   ];
 
