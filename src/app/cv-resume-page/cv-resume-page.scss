@@ -25,6 +25,13 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     animation: fadeIn 0.8s ease-out 0.3s both;
+
+    // Center when only one document is present
+    &:has(.document-section:only-child) {
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: 0 auto;
+    }
   }
 }
 

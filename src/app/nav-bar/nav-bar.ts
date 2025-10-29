@@ -15,7 +15,7 @@ export class NavBar {
   pages: Page[] = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Resume/CV', path: '/cv_resume' },
+    { name: 'Resume', path: '/cv_resume' },
     { name: 'Connect', path: '/connect' }
   ];
   
